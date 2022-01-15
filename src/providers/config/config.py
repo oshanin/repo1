@@ -1,6 +1,6 @@
-from base_config import BaseConfig
+from providers.config.base_config import BaseConfig
 import os
-from providers.data.config_provider import (
+from providers.config.config_provider import (
     ConfigFromJsonProvider,
     ConfigFromEnvVariablesProvider,
     PriorityProvider,
@@ -22,5 +22,8 @@ class Config(BaseConfig):
         super(Config, self).__init__()
 
         self._register("BASE_URL")
+        self._register("EMAIL")
+        self._register("PASSWORD")
+        self._register("DEFAULT_TOKEN_EXPIRE")
 
 CONFIG = Config()
